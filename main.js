@@ -105,14 +105,8 @@ function buscarGanador(posiciones){
 
 
 
-function clear(event){
-    // let elemento = event.target.firstElementChild;
-    // // elemento.innerHTML = "";
-    celdasArray.forEach(element => {
-        element.innerHTML = "";
-    });
-    empezarJuego();
-    turnoX = true;
+function clear(){
+    location.reload()
     
 }
 function turnoFuncion(turno){
