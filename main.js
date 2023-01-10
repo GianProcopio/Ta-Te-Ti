@@ -5,7 +5,7 @@ const mensajeFinal = document.getElementById('mensajeFinal');
 const finDelJuegoPantalla = document.querySelector('.fin-del-juego');
 const celdasArray = Array.from(document.querySelectorAll(".celda"));
 let contadorDeTurnos = 0;
-let turnoX = true;
+let turnoX = false;
 btnRestart.addEventListener('click', clear);
 
 // for(let i = 0; i < celdas.length; i++){
@@ -46,12 +46,15 @@ function mostrarFigura (event){
         elemento.innerHTML = "X";
         elemento.classList.add('x');
         hacerMovimiento("x");
+        textoTurno.innerHTML = 'O'
+        
         turnoX = false;
     }else{
         elemento.innerHTML = "O";
         elemento.classList.add('o');
         hacerMovimiento("o");
         turnoX = true;
+        textoTurno.innerHTML = 'X'
     }
 }    
 
@@ -107,7 +110,6 @@ function buscarGanador(posiciones){
 
 function clear(){
     location.reload()
-    
 }
 function turnoFuncion(turno){
     textoTurno.innerText = turno;
